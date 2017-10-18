@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RefBootstrapComponent } from './ref-bootstrap/ref-bootstrap.component';
+import { ThemeComponent } from './theme/theme.component';
 import { FieldComponent } from './field/field.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 const appRoutes: Routes = [
-    {path: '', redirectTo: '/ref-bootstrap', pathMatch: 'full'},
-    {path: 'ref-bootstrap', component: RefBootstrapComponent},
-    {path: 'fields', component: FieldComponent}
+    {path: '', redirectTo: '/theme', pathMatch: 'full'},
+    {path: 'theme', component: ThemeComponent},
+    {path: 'fields', component: FieldComponent},
+    {path: 'signin', component: SigninComponent}
 ];
 
 @NgModule({

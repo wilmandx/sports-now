@@ -7,13 +7,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FieldComponent implements OnInit {
   fieldList = [{name:"field 1", content:"players so"}];
-  constructor() { }
+  title='Test de binding';
+  habilitar=false;
+  testCreated=false;
+
+  getTitle(){
+    return this.title;
+
+  }
+  constructor() { 
+    setTimeout(()=>{
+      this.habilitar=true;
+    },5000);
+  }
+
+  clickTest(){
+    this.testCreated=true;
+  }
 
   ngOnInit() {
   }
 
   onFieldAdded(fieldData){
     this.fieldList.push(fieldData);
+  }
+
+  onChangeFirst(){
+    this.fieldList[0].name="great!!";
+  }
+
+  destroyFirst(){
+    this.fieldList.splice(0,1);
   }
 
 }

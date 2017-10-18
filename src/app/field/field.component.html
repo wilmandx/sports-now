@@ -1,9 +1,23 @@
+
 <div class="container">
-  <app-field-edit (fieldCreated)="onFieldAdded($event)"></app-field-edit>
+   {{'Testing::'}}{{title}} et {{getTitles}} <p>Add new terrain :::</p>
+   <button class="btn btn-primary" [disabled]="!habilitar" (click)="clickTest()">Test false</button>
+   <p *ngIf="testCreated; else noTest">Test created!!!</p>
+   <ng-template #noTest>
+     <p>Test not created</p>
+   </ng-template>
+  <app-field-edit (fieldAdded)="onFieldAdded($event)"></app-field-edit>
   <hr/>
-  <div class="row">
+  <div class="row">      
     <div class="col-lg-12">
-      <app-field-view *ngFor="let fieldElement of fieldList" [fldElement]="fieldElement"></app-field-view>
+      <button class="btn btn-primary" (click)="onChangeFirst()" >Change first</button>
+      <button class="btn btn-danger" (click)="destroyFirst()" >Change first</button>
+      <app-field-view *ngFor="let fieldElement of fieldList" [name]="fieldElement.name">
+        <div #contentParagraph>
+          <div *ngIf="fieldElement.name==='z'"><em>{{fieldElement.content}}</em></div>
+          <em *ngIf="fieldElement.name!=='z'">{{fieldElement.content}}</em>
+        </div>
+      </app-field-view>
     </div>
   </div>
 </div>

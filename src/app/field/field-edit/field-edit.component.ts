@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-field-edit', 
@@ -6,17 +6,20 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./field-edit.component.scss']
 })
 export class FieldEditComponent implements OnInit {
-  @Output()
+  @Output('fieldAdded')
   fieldCreated = new EventEmitter<{name: string, content: string}>();
   fieldName = '';
   fieldContent = '';
+  //@ViewChild('nameFieldInput') nameFieldContent: ElementRef;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onAddField(){
+  onAddField(/*nameFieldInput: HTMLInputElement*/) {
+    //console.log('Name =', this.nameFieldContent.nativeElement.value);
+    
     this.fieldCreated.emit({name: this.fieldName, content: this.fieldContent});
   }
 
