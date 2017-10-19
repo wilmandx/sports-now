@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { ThemeComponent } from './theme/theme.component';
 import { FieldComponent } from './field/field.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { InfosComponent } from './admin-customer/infos/infos.component';
+
 
 const appRoutes: Routes = [
-    {path: '', redirectTo: '/theme', pathMatch: 'full'},
-    {path: 'theme', component: ThemeComponent},
-    {path: 'fields', component: FieldComponent},
-    {path: 'signin', component: SigninComponent}
+    { path: '', redirectTo: '/theme', pathMatch: 'full' },
+    { path: 'theme', component: ThemeComponent },
+    { path: 'fields', component: FieldComponent },
+    { path: 'infos', component: InfosComponent },
+    { path: 'signin', component: SigninComponent }
 ];
 
 @NgModule({
