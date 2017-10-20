@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ThemeComponent } from './theme/theme.component';
-import { FieldComponent } from './field/field.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { InfosComponent } from './admin-customer/infos/infos.component';
+import { FieldComponent } from './admin-customer/field/field.component';
 
 
 const appRoutes: Routes = [

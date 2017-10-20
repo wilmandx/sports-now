@@ -33,21 +33,18 @@
             }
         }
     ],
-    "fields":[
-        {
-            "customerCode":"per-bombonera",
-            "confgFields":[
-                {
-                    "typeSport":"1",
-                    "numberFields":5
-                },
-                {
-                    "typeSport":"2",
-                    "numberFields":2
-                }
-            ]
-        }
-    ],
+    "fields":{
+        "per-bombonera": [
+            {
+                "typeSport":"1",
+                "numberFields":5
+            },
+            {
+                "typeSport":"2",
+                "numberFields":2
+            }
+        ]
+    },
     "taxonomy":[{
             "name":"sports",
             "values":[

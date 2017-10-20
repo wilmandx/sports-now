@@ -7,12 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { ThemeComponent } from './theme/theme.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FieldComponent } from './field/field.component';
 import { FieldEditComponent } from './field/field-edit/field-edit.component';
 import { FieldViewComponent } from './field/field-view/field-view.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { InfosComponent } from './admin-customer/infos/infos.component';
+import { FieldComponent } from './admin-customer/field/field.component';
+import { FieldService } from './shared/services/field.service';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { InfosComponent } from './admin-customer/infos/infos.component';
         CoreModule,
         AuthModule
     ],
-    providers: [],
+    providers: [FieldService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
