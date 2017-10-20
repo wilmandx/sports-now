@@ -3,25 +3,34 @@
         <div *ngIf="saved" class="alert alert-primary" role="alert">
             Infos saved
         </div>
-        <fieldset>
-            <legend>Your infos</legend>
-            <div class="form-group">
-                <label for="name" class="col-lg-2 control-label">Name</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="name" placeholder="Name" [(ngModel)]="name">
+        <!-- for activate html5 validations only add this directive to your form ngNativeValidate-->
+        <form (ngSubmit)="saveInfos()" #f="ngForm" >
+            <fieldset>
+                <legend>Your infos</legend>
+                <div class="form-group">
+                    <label for="name" class="col-lg-2 control-label">Name</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" [class.is-invalid]="!nameF.valid && nameF.touched" id="name" name="name" 
+                        minlength="3" placeholder="Name" [(ngModel)]="name" #nameF="ngModel" required>
+                        <!-- Validation generale -->
+                        <!-- <div *ngIf="!nameF.valid && nameF.touched" class="invalid-feedback">Please enter a name!</div> -->
+                        <!-- Fin validation generale -->
+                        <div *ngIf="nameF.errors && nameF.errors.required  && nameF.touched" class="invalid-feedback">Please enter a name!</div>
+                        <div *ngIf="nameF.errors && nameF.errors.minlength  && nameF.touched" class="invalid-feedback">Min length not respected</div>
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label for="address" class="col-lg-2 control-label">Address</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="address" placeholder="Address" [(ngModel)]="address">
+                <div class="form-group">
+                    <label for="address" class="col-lg-2 control-label">Address</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Address" [(ngModel)]="address">
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="submit" class="btn btn-primary" (click)="saveInfos()">Submit</button>
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button [disabled]="f.invalid" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
-            </div>
-        </fieldset>
+            </fieldset>
+        </form>
     </div>
 </div>

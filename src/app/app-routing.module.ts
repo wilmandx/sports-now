@@ -7,7 +7,7 @@ import { InfosComponent } from './admin-customer/infos/infos.component';
 
 
 const appRoutes: Routes = [
-    { path: '', redirectTo: '/theme', pathMatch: 'full' },
+    { path: '', redirectTo: '/infos', pathMatch: 'full' },
     { path: 'theme', component: ThemeComponent },
     { path: 'fields', component: FieldComponent },
     { path: 'infos', component: InfosComponent },

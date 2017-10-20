@@ -1,6 +1,6 @@
 
 <div class="container">
-   {{'Testing::'}}{{title}} et {{getTitles}} <p>Add new terrain :::</p>
+   {{'Testing::'}}{{title}} <p>Add new terrain :::</p>
    <button class="btn btn-primary" [disabled]="!habilitar" (click)="clickTest()">Test false</button>
    <p *ngIf="testCreated; else noTest">Test created!!!</p>
    <ng-template #noTest>
